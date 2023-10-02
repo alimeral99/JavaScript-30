@@ -19,6 +19,12 @@
         margin: 0;
       }
 
+      *,
+      *:before,
+      *:after {
+        box-sizing: inherit;
+      }
+
       .panels {
         min-height: 100vh;
         overflow: hidden;
@@ -90,9 +96,10 @@
       .panel p:nth-child(2) {
         font-size: 4em;
       }
+
       .panel.open {
-        flex: 5;
-        font-size: 40px;
+        flex: 4;
+        font-size: 20px;
       }
     </style>
 
@@ -123,5 +130,22 @@
         <p>Motion</p>
       </div>
     </div>
+
+    <script>
+      const panels = document.querySelectorAll(".panel");
+
+      function toggleOpen() {
+        this.classList.toggle("open");
+      }
+
+      function toggleActive(e) {
+        this.classList.remove("open.active");
+      }
+
+      panels.forEach((panel) => panel.addEventListener("click", toggleOpen));
+      panels.forEach((panel) =>
+        panel.addEventListener("transitionend", toggleActive)
+      );
+    </script>
   </body>
 </html>

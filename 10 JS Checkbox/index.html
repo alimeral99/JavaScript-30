@@ -5,5 +5,64 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   </head>
-  <body></body>
+  <style>
+    html {
+      font-family: sans-serif;
+      background: lightblue;
+    }
+
+    .inbox {
+      max-width: 400px;
+      margin: 50px auto;
+      padding: 10px;
+      background: white;
+      border-radius: 5px;
+    }
+
+    .item {
+      display: flex;
+      align-items: center;
+      border-bottom: 1px solid lightblue;
+    }
+
+    .item:last-child {
+      border-bottom: 0;
+    }
+
+    input:checked + p {
+      background: #f9f9f9;
+      text-decoration: line-through;
+    }
+    input[type="checkbox"] {
+      margin: 20px;
+    }
+  </style>
+  <body>
+    <div class="inbox">
+      <div class="item">
+        <input type="checkbox" />
+        <p>This is an inbox layout.</p>
+      </div>
+      <div class="item">
+        <input type="checkbox" />
+        <p>Check one item</p>
+      </div>
+      <div class="item">
+        <input type="checkbox" />
+        <p>Hold down your Shift key</p>
+      </div>
+      <div class="item">
+        <input type="checkbox" />
+        <p>Check a lower item</p>
+      </div>
+      <div class="item">
+        <input type="checkbox" />
+        <p>Everything in between should also be set to checked</p>
+      </div>
+      <div class="item">
+        <input type="checkbox" />
+        <p>Just regular JavaScript</p>
+      </div>
+    </div>
+  </body>
 </html>

@@ -22,8 +22,16 @@ function handleProgress() {
   progressBar.style.flexBasis = `${percent}%`;
 }
 
+function skip() {
+  video.currentTime += parseFloat(this.dataset.skip);
+}
+
 /// Event Listener
 video.addEventListener("click", togglePlay);
 video.addEventListener("play", updateButton);
 video.addEventListener("pause", updateButton);
 video.addEventListener("timeupdate", handleProgress);
+
+toggle.addEventListener("click", togglePlay);
+
+skipButtons.forEach((button) => button.addEventListener("click", skip));

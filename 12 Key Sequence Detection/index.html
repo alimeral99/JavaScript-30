@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const pressed = [];
+      const secretcode = "javascript";
+
+      window.addEventListener("keyup", (e) => {
+        pressed.push(e.key);
+
+        pressed.splice(
+          -secretcode.length - 1,
+          pressed.length - secretcode.length
+        );
+
+        if (pressed.join("").includes(secretcode)) {
+          console.log("run run run");
+          console.log(secretcode.length);
+          console.log(pressed);
+        }
+      });
+    </script>
+  </body>
+</html>
